@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downtown Restro & Café | Fresh Brews & Bites</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+        header { 
+            background-color: #ffb347;
+            padding: 1.4em 0;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            color: #fff;
+            letter-spacing: 2px;
+        }
+        nav {
+            margin-top: 1em;
+        }
+        nav a {
+            margin: 0 1em;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.18em;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #664400;
+            text-shadow: 0 1px 8px #fff6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 2em auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 32px rgba(224,178,98,0.12);
+            padding: 2em;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3em;
+        }
+        .hero h2 {
+            font-size: 2.2em;
+            color: #ffb347;
+            margin-bottom: .6em;
+        }
+        .hero p {
+            font-size: 1.1em;
+            color: #626262;
+            margin-bottom: 0.5em;
+        }
+        section {
+            margin-bottom: 2.5em;
+        }
+        .services-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2em;
+        }
+        .service-item {
+            flex: 1 1 250px;
+            background: #fffaf1;
+            border-radius: 8px;
+            padding: 1.2em 1em;
+            margin: 0.6em 0;
+            box-shadow: 0 2px 10px rgba(255,179,71,0.08);
+        }
+        .service-item h3 {
+            color: #e07b00;
+        }
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            align-items: center;
+        }
+        .about-img {
+            flex: 0 0 220px;
+        }
+        .about-img img {
+            border-radius: 50%;
+            width: 180px;
+            border: 5px solid #ffb347;
+            box-shadow: 0 4px 28px #ffb34722;
+        }
+        .about-text {
+            flex: 1 1 300px;
+        }
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+        }
+        .contact-info, .contact-form {
+            flex: 1 1 240px;
+        }
+        .contact-info h4 {
+            margin-top: 0;
+        }
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7em;
+        }
+        .contact-form input, .contact-form textarea {
+            font-size: 1em;
+            padding: 0.6em;
+            border-radius: 5px;
+            border: 1.5px solid #ffb34799;
+            background: #fff9f0;
+            resize: none;
+        }
+        .contact-form button {
+            padding: 0.7em 1.2em;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background: #ffb347;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .contact-form button:hover {
+            background: #e07b00;
+        }
+        .map {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 20px #ffb34722;
+            margin-top: 1em;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #222;
+            color: #fff;
+            font-size: 1em;
+            letter-spacing: 1px;
+            margin-top: 2em;
+            border-top: 4px solid #ffb347;
+        }
+        @media (max-width: 800px) {
+            .services-list, .about, .contact-details {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .container { padding: 1em }
+            .about-img { text-align: center; }
+        }
+    </style>
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        function handleContactForm(e) {
+            e.preventDefault();
+            // For demonstration, just show a thank you message
+            const form = document.getElementById('contactForm');
+            form.innerHTML = "<strong style='color: #e07b00;'>Thank you! We'll respond soon.</strong>";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Downtown Restro & Café</h1>
+        <nav>
+            <a href="javascript:void(0)" onclick="scrollToSection('home')">Home</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('services')">Menu</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('about')">About</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('contact')">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Home Section -->
+        <section class="hero" id="home">
+            <h2>Welcome to Downtown Restro & Café!</h2>
+            <p>Your local spot for premium coffee, homemade treats, and a cozy atmosphere.</p>
+            <p><strong>Open Daily: 11:00am - 11:00pm</strong></p>
+        </section>
+
+        <!-- Services/Menu Section -->
+        <section id="services">
+            <h2>Menu</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <h3>Freshly Brewed Coffee</h3>
+                    <ul>
+                        <li>Espresso, Americano, Cappuccino, Latte</li>
+                        <li>Locally sourced beans</li>
+                        <li>Organic options</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Artisan Teas</h3>
+                    <ul>
+                        <li>Green, Black, Herbal & Chai varieties</li>
+                        <li>Hand-selected blends</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Homemade Pastries</h3>
+                    <ul>
+                        <li>Croissants, muffins, scones, cookies</li>
+                        <li>Vegan & gluten-free available</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Sandwiches & Salads</h3>
+                    <ul>
+                        <li>Daily chef specials</li>
+                        <li>Fresh, local ingredients</li>
+                    </ul>
+                </div>
+                
+                <div class="service-item">
+                    <h3>Highlights</h3>
+                    <ul>
+                        <li>Cheese Fondue</li>
+                        <li>Mocktail</li>
+                        <li>Watermelon Mojito</li>
+                        <li>Thai Coconut Soup</li>
+                        <li>& many more...</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Restro & Café</h2>
+            <div class="about">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=facearea&w=400&q=80&facepad=3" alt="Downtown Restro & Café Owner">
+                </div>
+                <div class="about-text">
+                    <p>
+                        <strong>Downtown Restro & Café</strong> is a family-owned local business serving the community with love since 2015.
+                        Our mission is to create a warm, welcoming space where everyone can enjoy premium coffee, delicious food, and genuine smiles.
+                    </p>
+                    <p>
+                        We partner with local roasters and bakers to ensure the freshest ingredients, support other small businesses, and care for the planet with eco-friendly practices.
+                    </p>
+                    <p>
+                        Stop in for a cup, a chat, or to catch up on some work—we can't wait to serve you!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Location Section -->
+        <section id="contact">
+            <h2>Contact & Location</h2>
+            <div class="contact-details">
+                <div class="contact-info">
+                    <h4>Get In Touch</h4>
+                    <p>
+                        <strong>Email:</strong> hello@downtownrestrocafe.com<br>
+                        <strong>Phone:</strong> (555) 123-4567
+                    </p>
+                    <h4>Visit Us</h4>
+                    <p>
+                        Nana Mava Rd<br> 
+                        opp. Marwadi Corporate House<br> 
+                        Neharu Nagar Society, Nehru Nagar Co operative Society<br> 
+                        Chandreshnagar, Rajkot, Gujarat 360004<br>
+                    </p>
+                    <div class="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3692.0205237180157!2d70.77804697506863!3d22.2772123797032!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca4763d59fb1%3A0x99b4a4cbaa979f6b!2sDowntown%20Restro%20Cafe!5e0!3m2!1sen!2sin!4v1770438837233!5m2!1sen!2sin" width="100%" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h4>Send a Message</h4>
+                    <form id="contactForm" onsubmit="handleContactForm(event)">
+                        <input type="text" name="name" required placeholder="Your Name">
+                        <input type="email" name="email" required placeholder="Your Email">
+                        <textarea name="message" required placeholder="Your Message" rows="4"></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer>
+        &copy; 2024 Downtown Restro & Café &mdash; Crafted with ☕️ and care for our community
+    </footer>
+</body>
+</html>
